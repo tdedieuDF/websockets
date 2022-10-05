@@ -1,4 +1,3 @@
-%global srcname websockets-10.3
 %global debug_package ${nil}
 
 %define __python3 /usr/bin/python3.8
@@ -11,7 +10,7 @@ Group:          Application/Network
 License:        GPL
 URL:            https://github.com/aaugustin/websockets
 Vendor:         aaugustin
-Source:         https://github.com/aaugustin/websockets/archive/refs/tags/10.3.tar.gz
+Source:         packagesource.tar.gz
 Prefix:         %{_prefix}
 Packager:       Dragonfly
 BuildRoot:      %{_tmppath}/%{name}-%{version}
@@ -23,7 +22,7 @@ Requires:       python38
 Websocket middleware
 
 %prep
-%setup -n %{srcname}
+%setup -c .
 
 %build
 %{__python3} setup.py build
